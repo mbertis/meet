@@ -40,8 +40,9 @@ class Event extends Component {
           <p className="timeZone">{event.start.timeZone}</p>
           <h3 className="location">{event.location}</h3>
           <div>{this.showExpandedDetails()}</div>
-          <button className="showDetails" onClick={this.handleButtonClick}>
-            Show Details
+          <button 
+          className="showDetails" 
+          onClick={this.handleButtonClick}>Show Details
           </button>
         </div>
       </div>

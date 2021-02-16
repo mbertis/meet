@@ -32,7 +32,7 @@ describe("<Event /> component", () => {
     expect(EventWrapper.state("isExpanded")).toBe(true);
   });
   test("should render event link when expanded", () => {
-    expect(EventWrapper.find(".event-link").props().href).toBe(event.htmlLink);
+    expect(EventWrapper.find(".event-link").prop("href")).toBe(event.htmlLink);
   });
   test("should render event description when expanded", () => {
     expect(EventWrapper.find(".description").text()).toBe(event.description);
