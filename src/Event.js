@@ -17,19 +17,6 @@ class Event extends Component {
       });
   };
 
-  showExpandedDetails = () => {
-    const { event } = this.props;
-    if (this.state.isExpanded === true) {
-      return (
-        <div className="expanded-event-details">
-          <h1>About This Event:</h1>
-          <a className="event-link" href={event.htmlLink}>See Details on Google Calendar</a>
-          <p className="description">{event.description}</p>
-        </div>
-      );
-    }
-  };
-
   render() {
     const { event } = this.props;
     return (
@@ -38,11 +25,19 @@ class Event extends Component {
         <div>
           <p className="startDate">{event.start.dateTime}</p>
           <p className="timeZone">{event.start.timeZone}</p>
-          <h3 className="location">{event.location}</h3>
-          <div>{this.showExpandedDetails()}</div>
+          <p className="location">{event.location}</p>
+          
+          {this.state.isExpanded && (
+            <div className="expanded-event-details">
+            <h1>About This Event:</h1>
+            <a className="event-link" href={event.htmlLink}>See Details on Google Calendar</a>
+            <p className="description">{event.description}</p>
+          </div>
+          )}
+
           <button 
           className="showDetails" 
-          onClick={this.handleButtonClick}>Show Details
+          onClick={this.handleButtonClick}>{this.state.isExpanded ? "Hide Details" : "Show Details"}
           </button>
         </div>
       </div>

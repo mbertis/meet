@@ -32,10 +32,16 @@ describe("<Event /> component", () => {
     expect(EventWrapper.state("isExpanded")).toBe(true);
   });
   test("should render event link when expanded", () => {
+    EventWrapper.setState({isExpanded: true});
     expect(EventWrapper.find(".event-link").prop("href")).toBe(event.htmlLink);
   });
   test("should render event description when expanded", () => {
+    EventWrapper.setState({isExpanded: true});
     expect(EventWrapper.find(".description").text()).toBe(event.description);
+  });
+  test("details button should toggle when clicked", () => {
+    EventWrapper.setState({isExpanded: true});
+    expect(EventWrapper.find(".showDetails").text()).toBe("Hide Details");
   });
   test("event details should be collapsed when button is clicked again", () => {
     EventWrapper.find(".showDetails").simulate("click");
