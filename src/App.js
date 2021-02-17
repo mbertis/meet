@@ -6,11 +6,13 @@ import NumberOfEvents from "./NumberOfEvents";
 
 class App extends Component {
   render() {
-    return <div className="App">
-      <CitySearch />
-      <EventList />
-      <NumberOfEvents />
-    </div>;
+    return (
+      <div className="App">
+        <CitySearch />
+        <EventList />
+        <NumberOfEvents />
+      </div>
+    );
   }
 }
 
