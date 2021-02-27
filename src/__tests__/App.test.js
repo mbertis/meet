@@ -34,11 +34,11 @@ describe("<App /> integration", () => {
     expect(AppWrapper.find(EventList).props().events).toEqual(AppEventsState);
     AppWrapper.unmount();
   });
-  test("App passes 'event count' state as a prop to NumberOfEvents", () => {
+  test("App passes 'numberOfEvents' state as a prop to NumberOfEvents", () => {
     const AppWrapper = mount(<App />);
-    const AppEventCountState = AppWrapper.state("eventCount");
+    const AppEventCountState = AppWrapper.state("numberOfEvents");
     expect(AppEventCountState).not.toEqual(undefined);
-    expect(AppWrapper.find(NumberOfEvents).props().eventCount).toEqual(AppEventCountState);
+    expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toEqual(AppEventCountState);
     AppWrapper.unmount();
   });
   test('App passes "locations" state as a prop to CitySearch', () => {
