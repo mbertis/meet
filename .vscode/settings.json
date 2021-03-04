@@ -1,7 +1,8 @@
 {
-  "cucumberautocomplete.steps": [
-      "test/features/step_definitions/*.js",
-      "node_modules/qa-lib/src/step_definitions/*.js"
-  ],
-  "cucumberautocomplete.strictGherkinCompletion": true
+    "cucumberautocomplete.steps": [
+        // "test/features/step_definitions/*.js",
+        // "node_modules/qa-lib/src/step_definitions/*.js",
+        "src/features/filterEventsByCity.test.js"
+    ],
+    "cucumberautocomplete.strictGherkinCompletion": true
 }
