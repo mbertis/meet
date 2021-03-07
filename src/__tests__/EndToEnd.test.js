@@ -8,8 +8,8 @@ describe("show/hide an event details", () => {
     browser = await puppeteer.launch({
       headless: false,
       ignoreDefaultArgs: ['--disable-extensions'],
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
-      // executablePath: "/usr/bin/chromium-browser"
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      executablePath: "/usr/bin/chromium-browser"
     });   
     page = await browser.newPage(); 
     await page.goto("http://localhost:3000/");
