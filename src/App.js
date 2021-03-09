@@ -44,7 +44,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Meet <span color="#2e4045"></span></h1>
+        <div className="Title">
+        <h1>Meet</h1>
+        </div>
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}
