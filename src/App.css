@@ -148,6 +148,7 @@ button {
   padding: 8px 6px 8px 10px;
   background-color: #eee;
   cursor: default;
+  top: 60px;
 }
 
 .suggestions > li:last-child {
