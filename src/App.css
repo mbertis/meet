@@ -37,7 +37,7 @@
   }
 } */
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+@import url(https://fonts.googleapis.com/css?family=Poppins:500);
 .App {
   text-align: center;
   padding: 2% 5%;
@@ -56,6 +56,8 @@ h1 {
 
 .Title {
   color: #2e4045;
+  font-size: 5em;
+  font-family: "Poppins", sans-serif;
 }
 
 .App * {
