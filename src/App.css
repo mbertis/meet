@@ -138,7 +138,7 @@ button {
   z-index: 2;
   align-self: center;
   margin: 0;
-  top: 60px;
+  top: 100px;
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
@@ -148,7 +148,6 @@ button {
   padding: 8px 6px 8px 10px;
   background-color: #eee;
   cursor: default;
-  margin-top: 60px;
 }
 
 .suggestions > li:last-child {
