@@ -37,7 +37,7 @@
   }
 } */
 
-@import url(https://fonts.googleapis.com/css?family=Robhttps://fonts.googleapis.com/css2?family=Poppins&display=swapoto:500);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:400);
 .App {
   text-align: center;
   padding: 2% 5%;
@@ -120,7 +120,7 @@ input[type="number"] {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 1px solid #5e3c58;
   border-radius: 4px;
   position: relative;
 }
@@ -197,6 +197,14 @@ input[type="number"] {
   transition: all 0.4s ease 0s;
   min-width: 10rem;
   margin: 1rem;
+}
+
+button {
+  color: #ebe8e7;
+}
+
+.event-link {
+  color: #5e3c58;
 }
 
 .google-btn {
