@@ -37,7 +37,7 @@
   }
 } */
 
-@import url(https://fonts.googleapis.com/css?family=Poppins:400);
+@import url(https://fonts.googleapis.com/css?family=Poppins:500);
 .App {
   text-align: center;
   padding: 2% 5%;
@@ -197,10 +197,6 @@ input[type="number"] {
   transition: all 0.4s ease 0s;
   min-width: 10rem;
   margin: 1rem;
-}
-
-button {
-  background-color: #ebe8e7;
 }
 
 .event-link {
