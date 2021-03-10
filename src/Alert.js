@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Alert extends Component {
   constructor(props) {
     super(props);
-    this.color = null;  //Color is null by default, as its children will override this
+    this.color = null; //Color is null by default, as its children will override this
   }
 
   getStyle = () => {
     return {
       color: this.color,
     };
-  }
+  };
 
   render() {
     return (

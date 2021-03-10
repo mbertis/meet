@@ -5,22 +5,25 @@ class CitySearch extends Component {
   state = {
     query: "",
     suggestions: [],
-    showSuggestions: undefined
+    showSuggestions: undefined,
   };
 
   handleInputChanged = (event) => {
     const value = event.target.value;
-    this.setState({showSuggestions: true});
+    this.setState({ showSuggestions: true });
     const suggestions = this.props.locations.filter((location) => {
       return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
     });
-    if (suggestions.length === 0) {  //If the suggestions list contains no suggestions, InfoAlert will appear with InfoText
+    if (suggestions.length === 0) {
+      //If the suggestions list contains no suggestions, InfoAlert will appear with InfoText
       this.setState({
         query: value,
-        infoText: "We cannot find the city you are looking for. Please try searching for another city.",
+        infoText:
+          "We cannot find the city you are looking for. Please try searching for another city.",
       });
     } else {
-      return this.setState({  //If suggestions list has some suggestions, InfoAlert will be empty
+      return this.setState({
+        //If suggestions list has some suggestions, InfoAlert will be empty
         query: value,
         suggestions,
         infoText: "",
@@ -32,7 +35,7 @@ class CitySearch extends Component {
     this.setState({
       query: suggestion,
       showSuggestions: false,
-      infoText: ''
+      infoText: "",
     });
     this.props.updateEvents(suggestion);
   };
@@ -40,17 +43,22 @@ class CitySearch extends Component {
   render() {
     return (
       <div className="CitySearch">
-        <InfoAlert text={this.state.infoText} />
         <h4 className="number-title">City:</h4>
+        <InfoAlert text={this.state.infoText} />
         <input
           type="text"
           className="city"
           placeholder="Search By City"
           value={this.state.query}
           onChange={this.handleInputChanged}
-          onFocus={() => { this.setState({ showSuggestions: true }) }}
+          onFocus={() => {
+            this.setState({ showSuggestions: true });
+          }}
         />
-        <ul className="suggestions" style={this.state.showSuggestions ? {}: { display: 'none' }}>
+        <ul
+          className="suggestions"
+          style={this.state.showSuggestions ? {} : { display: "none" }}
+        >
           {this.state.suggestions.map((suggestion) => (
             <li
               key={suggestion}
