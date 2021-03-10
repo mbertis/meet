@@ -8,18 +8,19 @@ class NumberOfEvents extends Component {
 
   updateNumber = (event) => {
     const value = event.target.value;
-    if (value <= 0 || value > 32) {
+    if (value <= 0 || value > 32 || value === "") {
       this.setState({
         numberOfEvents: value,
-        errorText: "You have entered an invalid number of events. Please enter a number between 1 and 32.",
+        errorText:
+          "You have entered an invalid number of events. Please enter a number between 1 and 32.",
       });
     } else {
-     return this.setState({
-      numberOfEvents: value,
-      errorText: "",
-    });
-  }
-    this.props.updateEvents("all", value);
+      this.props.updateEvents("all", value);
+      return this.setState({
+        numberOfEvents: value,
+        errorText: "",
+      });
+    }
   };
 
   render() {
