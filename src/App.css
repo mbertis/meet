@@ -212,7 +212,7 @@ button {
 }
 
 .Alert {
-  position: relative;
+  position: static;
 }
 
 .data-vis-wrapper {
