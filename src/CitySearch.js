@@ -17,7 +17,7 @@ class CitySearch extends Component {
     if (suggestions.length === 0) {  //If the suggestions list contains no suggestions, InfoAlert will appear with InfoText
       this.setState({
         query: value,
-        infoText: "We cannot find the city you are looking for. Please try searching for another city",
+        infoText: "We cannot find the city you are looking for. Please try searching for another city.",
       });
     } else {
       return this.setState({  //If suggestions list has some suggestions, InfoAlert will be empty
