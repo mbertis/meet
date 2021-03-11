@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ErrorAlert } from "./Alert";
+import { ErrorAlert, WarningAlert } from "./Alert";
 
 class NumberOfEvents extends Component {
   state = {
@@ -14,6 +14,11 @@ class NumberOfEvents extends Component {
         errorText:
           "You have entered an invalid number of events. Please enter a number between 1 and 32.",
       });
+    } else if (isNaN(value)) {
+      this.setState({
+        numberOfEvents: value,
+        warningText: "Please enter a number.",
+      });
     } else {
       this.props.updateEvents("all", value);
       return this.setState({
@@ -27,6 +32,7 @@ class NumberOfEvents extends Component {
     return (
       <div className="NumberOfEvents">
         <ErrorAlert text={this.state.errorText} />
+        <WarningAlert text={this.state.warningText} />
         <h4 className="number-title">Number of Events:</h4>
         <input
           type="text"
