@@ -56,8 +56,8 @@ class App extends Component {
       <div className="App">
         <div className="Title">
         <h1>Meet</h1>
-        <InfoAlert text={this.state.infoText} />
         </div>
+        <InfoAlert text={this.state.infoText} />
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}
