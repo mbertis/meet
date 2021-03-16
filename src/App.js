@@ -16,7 +16,7 @@ class App extends Component {
 
   componentDidMount() {
     this.mounted = true;
-    if (navigator.onLine === "false") {
+    if (!navigator.onLine) {
       this.setState({
         infoText: "You are offline. Data shown may be out-of-date."
       });
