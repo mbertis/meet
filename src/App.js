@@ -5,6 +5,7 @@ import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
 import "./nprogress.css";
+import { InfoAlert } from "./Alert";
 
 class App extends Component {
   state = {
@@ -15,6 +16,15 @@ class App extends Component {
 
   componentDidMount() {
     this.mounted = true;
+    if (navigator.onLine === "false") {
+      this.setState({
+        infoText: "You are offline. Data shown may be out-of-date."
+      });
+    } else {
+      this.setState ({
+        infoText: ""
+      });
+    }
     getEvents().then((events) => {
       if (this.mounted) {
         this.setState({ events, locations: extractLocations(events) });
@@ -46,6 +56,7 @@ class App extends Component {
       <div className="App">
         <div className="Title">
         <h1>Meet</h1>
+        <InfoAlert text={this.state.infoText} />
         </div>
         <CitySearch
           locations={this.state.locations}
