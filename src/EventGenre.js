@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from "recharts";
 
 const EventGenre = ({ events }) => {
   const [data, setData] = useState([]);
@@ -11,13 +11,13 @@ const EventGenre = ({ events }) => {
   const getData = () => {
     const genres = ["React", "JavaScript", "Node", "jQuery", "AngularJS"];
     const data = genres.map((genre) => {
-      const value = events
-        .filter(({ summary }) => summary.split(" "))
-        .includes(genre).length;
+      const value = events.filter(({ summary }) => summary.split(" ").includes(genre)).length;
       return { name: genre, value };
     })
     return data;
   };
+
+  const colors = ["#903548", "#c63254", "#ec6449", "#f9994b", "#fbcb5a"];
 
   return (
     <ResponsiveContainer height={400}>
@@ -32,8 +32,12 @@ const EventGenre = ({ events }) => {
           dataKey="value"
           label={({ name, percent }) =>
             `${name} ${(percent * 100).toFixed(0)}%`
-          }
-        ></Pie>
+          }>
+          {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={colors[index % colors.length]}/>
+            ))}
+            <Legend verticalAlign="top" height={36} />
+        </Pie>
       </PieChart>
     </ResponsiveContainer>
   );
