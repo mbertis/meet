@@ -36,8 +36,8 @@ class App extends Component {
   getData = () => {
     const {locations, events} = this.state;
     const data = locations.map((location)=>{
-      const number = events.filter((event) => event.location === location).length
-      const city = location.split(' ').shift()
+      const number = events.filter((event) => event.location === location).length //Maps the locations and filters events by each location to get the length of the resulting array
+      const city = location.split(',').shift()  //Splits location at every comma to only return city
       return {city, number};
     })
     return data;
