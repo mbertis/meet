@@ -35,9 +35,9 @@ class App extends Component {
 
   getData = () => {
     const {locations, events} = this.state;
-    const data = locations.map((location) => {
-      const number = events.filter((event) => event.location === location).length  //Maps the locations and filters events by each location to get the length of the resulting array
-      const city = location.split(" ").shift()  //Splits location at every space (" ") to only return city
+    const data = locations.map((location)=>{
+      const number = events.filter((event) => event.location === location).length
+      const city = location.split(' ').shift()
       return {city, number};
     })
     return data;
@@ -88,10 +88,10 @@ class App extends Component {
           }}
         >
           <CartesianGrid />
-          <XAxis type="category" dataKey="city" name="city" />
-          <YAxis type="number" dataKey="number" name="number of events" />
+          <XAxis type="category" dataKey="city" name="City" />
+          <YAxis allowDecimals={false} type="number" dataKey="number" name="Number of Events" />
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-          <Scatter data={this.getData} fill="#8884d8" />
+          <Scatter data={this.getData()} fill="#8884d8" />
         </ScatterChart>
         </ResponsiveContainer>
         <EventList events={this.state.events} />
