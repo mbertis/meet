@@ -7,6 +7,7 @@ import { getEvents, extractLocations } from "./api";
 import "./nprogress.css";
 import { InfoAlert } from "./Alert";
 import {ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from "recharts";
+import EventGenre from "./EventGenre";
 
 class App extends Component {
   state = {
@@ -77,6 +78,8 @@ class App extends Component {
           numberOfEvents={this.state.numberOfEvents}
           updateEvents={this.updateEvents}
         />
+        <div className="data-vis-wrapper">
+          <EventGenre events={this.state.events} />
         <h4>Events in each city</h4>
         <ResponsiveContainer height={400} >
         <ScatterChart
@@ -94,6 +97,7 @@ class App extends Component {
           <Scatter data={this.getData()} fill="#8884d8" />
         </ScatterChart>
         </ResponsiveContainer>
+        </div>
         <EventList events={this.state.events} />
       </div>
     );
